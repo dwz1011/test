@@ -33,6 +33,7 @@ for i in range(0,len(lines)):
     proxy_host = "http://"+ip[0]+":"+ip[1]
     proxy_temp = {"http":proxy_host}
     proxys.append(proxy_temp)
+url = "http://ip.chinaz.com/getip.aspx"
 for proxy in proxys:
     try:
         res = urllib.urlopen(url,proxies=proxy).read()      #proxies是代理,以代理模式访问目标网址
@@ -40,4 +41,3 @@ for proxy in proxys:
     except Exception,e:
         print proxy, e
         continue
-
